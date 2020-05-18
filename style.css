@@ -825,12 +825,12 @@ a:active {
 --------------------------------------------------------------*/
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
+.infinite-scroll.neverending .site__footer {
 	display: none;
 }
 
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
-.infinity-end.neverending .site-footer {
+.infinity-end.neverending .site__footer {
 	display: block;
 }
 

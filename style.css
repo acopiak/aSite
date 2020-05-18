@@ -40,6 +40,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Shame
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -927,5 +928,9 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+# Shame— Will fix/organize/find a better way....but later.
+--------------------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -10,54 +11,52 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<header class="entry__header">
+		<?php if (is_singular()) : ?>
+			<h1 class="entry-title">
+				<?php the_title(); ?>
+			</h1>
+		<?php else : ?>
+			<h1 class="entry-title">
+				<a href="<?php esc_url(get_permalink()) ?>" rel="bookmark"></a>
+			</h1>
+		<?php endif; ?>
 
-		if ( 'post' === get_post_type() ) :
-			?>
+		<?php if ('post' === get_post_type()) : ?>
 			<div class="entry-meta">
-				<?php
-				asite_posted_on();
-				asite_posted_by();
-				?>
+				<?php asite_posted_on(); ?>
+				<?php asite_posted_by(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header><!-- .entry__header -->
 
 	<?php asite_post_thumbnail(); ?>
 
-	<div class="entry-content">
-		<?php
-		the_content(
+	<div class="entry__content">
+		<?php the_content(
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'asite' ),
+					__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'asite'),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
 				),
-				wp_kses_post( get_the_title() )
+				wp_kses_post(get_the_title())
 			)
-		);
+		); ?>
 
-		wp_link_pages(
+		<?php wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'asite' ),
+				'before' => '<div class="page__links">' . esc_html__('Pages:', 'asite'),
 				'after'  => '</div>',
 			)
-		);
-		?>
-	</div><!-- .entry-content -->
+		); ?>
+	</div><!-- .entry__content -->
 
-	<footer class="entry-footer">
+	<footer class="entry__footer">
 		<?php asite_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</footer><!-- .entry__footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

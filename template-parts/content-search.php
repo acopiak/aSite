@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying results in search pages
  *
@@ -10,18 +11,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<header class="entry__header">
+		<?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			asite_posted_on();
-			asite_posted_by();
-			?>
-		</div><!-- .entry-meta -->
+		<?php if ('post' === get_post_type()) : ?>
+			<div class="entry-meta">
+				<?php
+				asite_posted_on();
+				asite_posted_by();
+				?>
+			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header><!-- .entry__header -->
 
 	<?php asite_post_thumbnail(); ?>
 
@@ -29,7 +30,7 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
+	<footer class="entry__footer">
 		<?php asite_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</footer><!-- .entry__footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

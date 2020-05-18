@@ -20,11 +20,11 @@ article {
     @include grid($grid-base--full);
 }
 
-.entry-header {
+.entry__header {
     grid-column: $grid-span--content;
 }
 
-.entry-content {
+.entry__content {
     grid-column: $grid-span--full;
 
     @include grid($grid-base--full);
@@ -34,7 +34,7 @@ article {
     }
 }
 
-.entry-footer {
+.entry__footer {
     grid-column: $grid-span--content;
 }
 

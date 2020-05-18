@@ -11,12 +11,13 @@
 	grid-area: header;
 }
 
-.site-main {
+.site__content {
 	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+	overflow: hidden;
+	/* Resolves issue with <pre> elements forcing full width. */
 }
 
-.widget-area {
+.widget__container {
 	grid-area: sidebar;
 }
 

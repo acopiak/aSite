@@ -31,22 +31,17 @@
 			<div class="header__container">
 				<div class="header__branding">
 					<?php the_custom_logo(); ?>
-					<?php if (is_front_page() && is_home()) :
-					?>
+					<?php if (is_front_page() && is_home()) : ?>
 						<h1 class="site__title">
 							<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
 						</h1>
-					<?php
-					else :
-					?>
+					<?php else : ?>
 						<p class="site__title">
 							<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
 						</p>
-					<?php
-					endif;
-					$asite_description = get_bloginfo('description', 'display');
-					if ($asite_description || is_customize_preview()) :
-					?>
+					<?php endif; ?>
+					<?php $asite_description = get_bloginfo('description', 'display'); ?>
+					<?php if ($asite_description || is_customize_preview()) : ?>
 						<p class="site__description">
 							<?php echo $asite_description; ?>
 						</p>

@@ -694,9 +694,9 @@ a:active {
 	}
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site__content .comment-navigation,
+.site__content .posts-navigation,
+.site__content .post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -816,13 +816,13 @@ a:active {
 	display: none;
 }
 
-.page-content,
-.entry-content,
+.page__content,
+.entry__content,
 .entry-summary {
 	margin: 1.5em 0 0;
 }
 
-.page-links {
+.page__links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
@@ -856,8 +856,8 @@ a:active {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
+.page__content .wp-smiley,
+.entry__content .wp-smiley,
 .comment-content .wp-smiley {
 	border: none;
 	margin-bottom: 0;

@@ -53,9 +53,9 @@ if (!function_exists('asite_setup')) :
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post__thumbnails/
 		 */
-		add_theme_support('post-thumbnails');
+		add_theme_support('post__thumbnails');
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(

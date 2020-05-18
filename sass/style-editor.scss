@@ -1,0 +1,57 @@
+$grid-base--full: 12;
+$grid-span--full: #{1} / #{-1};
+$grid-base--wide: 8;
+$grid-span--wide: #{3} / #{11};
+$grid-base--content: 4;
+$editor-grid-span--content: #{4} / #{10};
+$gutter: 30px;
+
+$template-columns--wide: repeat($grid-base--wide, 1fr);
+$template-columns--full: repeat($grid-base--full, 1fr);
+
+
+@mixin grid ($size) {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: repeat($size, 1fr);
+}
+
+.block-editor-block-list__layout.is-root-container {
+    @include grid($grid-base--full);
+
+    grid-template-columns: $template-columns--full;
+
+    >*:not(.alignwide):not([data-align="wide"]):not(.alignfull):not([data-align="full"]) {
+        grid-column: $editor-grid-span--content;
+    }
+}
+
+.alignwide,
+[data-align="wide"] {
+    grid-column: $grid-span--wide;
+
+    >.wp-block-group__inner-container {
+        @include grid($grid-base--wide);
+
+        >*:not(.alignwide):not(.alignfull) {
+            grid-column: 3/7;
+        }
+
+        >*.alignwide {
+            grid-column: $grid-span--full;
+        }
+    }
+}
+
+.alignfull,
+[data-align="full"] {
+    grid-column: $grid-span--full;
+
+    >.wp-block-group__inner-container {
+        @include grid($grid-base--full);
+
+        >*:not(.alignwide):not(.alignfull) {
+            grid-column: $editor-grid-span--content;
+        }
+    }
+}

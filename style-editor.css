@@ -1,2 +1,51 @@
+.block-editor-block-list__layout.is-root-container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.block-editor-block-list__layout.is-root-container > *:not(.alignwide):not([data-align="wide"]):not(.alignfull):not([data-align="full"]) {
+	grid-column: 4 / 10;
+}
+
+.alignwide,
+[data-align="wide"] {
+	grid-column: 3 / 11;
+}
+
+.alignwide > .wp-block-group__inner-container,
+[data-align="wide"] > .wp-block-group__inner-container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.alignwide > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull),
+[data-align="wide"] > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+	grid-column: 3/7;
+}
+
+.alignwide > .wp-block-group__inner-container > *.alignwide,
+[data-align="wide"] > .wp-block-group__inner-container > *.alignwide {
+	grid-column: 1 / -1;
+}
+
+.alignfull,
+[data-align="full"] {
+	grid-column: 1 / -1;
+}
+
+.alignfull > .wp-block-group__inner-container,
+[data-align="full"] > .wp-block-group__inner-container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.alignfull > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull),
+[data-align="full"] > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+	grid-column: 4 / 10;
+}
 
 /*# sourceMappingURL=style-editor.css.map */

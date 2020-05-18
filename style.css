@@ -783,10 +783,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
-
 .post,
 .page {
 	margin: 0 0 1.5em;
@@ -932,5 +928,61 @@ object {
 /*--------------------------------------------------------------
 # Shame— Will fix/organize/find a better way....but later.
 --------------------------------------------------------------*/
+article {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.entry-header {
+	grid-column: 5 / 9;
+}
+
+.entry-content {
+	grid-column: 1 / -1;
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.entry-content > *:not(.alignwide):not(.alignfull) {
+	grid-column: 5 / 9;
+}
+
+.entry-footer {
+	grid-column: 5 / 9;
+}
+
+.alignwide {
+	grid-column: 3 / 11;
+}
+
+.alignwide > .wp-block-group__inner-container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.alignwide > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+	grid-column: 3/7;
+}
+
+.alignwide > .wp-block-group__inner-container > *.alignwide {
+	grid-column: 1 / -1;
+}
+
+.alignfull {
+	grid-column: 1 / -1;
+}
+
+.alignfull > .wp-block-group__inner-container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.alignfull > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+	grid-column: 5 / 9;
+}
 
 /*# sourceMappingURL=style.css.map */

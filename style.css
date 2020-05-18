@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*!
 Theme Name: aSite
 Theme URI: http://underscores.me/
@@ -471,8 +472,8 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -523,7 +524,8 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active, button:focus,
+button:active,
+button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -596,7 +598,9 @@ a:visited {
 	color: #800080;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
 	color: #191970;
 }
 
@@ -604,26 +608,27 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	outline: 0;
 }
 
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
+.header__navigation--primary {
 	display: block;
 	width: 100%;
 }
 
-.main-navigation ul {
+.header__navigation--primary ul {
 	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
 
-.main-navigation ul ul {
+.header__navigation--primary ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
@@ -632,53 +637,54 @@ a:hover, a:active {
 	z-index: 99999;
 }
 
-.main-navigation ul ul ul {
+.header__navigation--primary ul ul ul {
 	left: -999em;
 	top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.header__navigation--primary ul ul li:hover>ul,
+.header__navigation--primary ul ul li.focus>ul {
 	display: block;
 	left: auto;
 }
 
-.main-navigation ul ul a {
+.header__navigation--primary ul ul a {
 	width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.header__navigation--primary ul li:hover>ul,
+.header__navigation--primary ul li.focus>ul {
 	left: auto;
 }
 
-.main-navigation li {
+.header__navigation--primary li {
 	position: relative;
 }
 
-.main-navigation a {
+.header__navigation--primary a {
 	display: block;
 	text-decoration: none;
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.menu__toggle,
+.header__navigation--primary.toggled ul {
 	display: block;
 }
 
 @media screen and (min-width: 37.5em) {
-	.menu-toggle {
+	.menu__toggle {
 		display: none;
 	}
-	.main-navigation ul {
+
+	.header__navigation--primary ul {
 		display: flex;
 	}
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -945,7 +951,7 @@ article {
 	grid-template-columns: repeat(12, 1fr);
 }
 
-.entry-content > *:not(.alignwide):not(.alignfull) {
+.entry-content>*:not(.alignwide):not(.alignfull) {
 	grid-column: 5 / 9;
 }
 
@@ -957,17 +963,17 @@ article {
 	grid-column: 3 / 11;
 }
 
-.alignwide > .wp-block-group__inner-container {
+.alignwide>.wp-block-group__inner-container {
 	display: grid;
 	gap: 30px;
 	grid-template-columns: repeat(8, 1fr);
 }
 
-.alignwide > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+.alignwide>.wp-block-group__inner-container>*:not(.alignwide):not(.alignfull) {
 	grid-column: 3/7;
 }
 
-.alignwide > .wp-block-group__inner-container > *.alignwide {
+.alignwide>.wp-block-group__inner-container>*.alignwide {
 	grid-column: 1 / -1;
 }
 
@@ -975,13 +981,13 @@ article {
 	grid-column: 1 / -1;
 }
 
-.alignfull > .wp-block-group__inner-container {
+.alignfull>.wp-block-group__inner-container {
 	display: grid;
 	gap: 30px;
 	grid-template-columns: repeat(12, 1fr);
 }
 
-.alignfull > .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+.alignfull>.wp-block-group__inner-container>*:not(.alignwide):not(.alignfull) {
 	grid-column: 5 / 9;
 }
 

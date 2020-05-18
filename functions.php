@@ -8,9 +8,9 @@
  * @package aSite
  */
 
-if (!defined('_S_VERSION')) {
+if (!defined('_aSite_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.0');
+	define('_aSite_VERSION', '1.0.0');
 }
 
 if (!function_exists('asite_setup')) :

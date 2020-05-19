@@ -13,46 +13,52 @@ get_header();
 
 <main id="primary" class="site__content">
 
-	<section class="error-404 not-found">
+	<section class="error-404__container not-found">
 		<header class="page__header">
-			<h1 class="page__title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'asite'); ?></h1>
+			<h1 class="page__title">
+				<?php esc_html_e('Oops! That page can&rsquo;t be found.', 'asite'); ?>
+			</h1>
 		</header><!-- .page__header -->
 
-		<div class="wrong-way__container">
-			<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'asite'); ?></p>
+		<div class="lost__container">
+			<div class="lost--primary">
+				<p>
+					<?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'asite'); ?>
+				</p>
+			</div>
 
-			<?php
-			get_search_form();
+			<div class="lost--secondary">
+				<!-- @TODO- Make a 'searchform.php'. -->
+				<div class="widget widget--search">
+					<?php get_search_form(); ?>
+				</div>
 
-			the_widget('WP_Widget_Recent_Posts');
-			?>
+				<!-- @TODO- Not like this. -->
+				<div class="widget widget--categories">
+					<h2 class="widget__title">
+						<?php esc_html_e('Most Used Categories', 'asite'); ?>
+					</h2>
+					<div class="widget__content">
+						<ul>
+							<?php wp_list_categories(
+								array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								)
+							); ?>
+						</ul>
+					</div>
+				</div><!-- .widget -->
 
-			<div class="widget widget_categories">
-				<h2 class="widget-title"><?php esc_html_e('Most Used Categories', 'asite'); ?></h2>
-				<ul>
-					<?php
-					wp_list_categories(
-						array(
-							'orderby'    => 'count',
-							'order'      => 'DESC',
-							'show_count' => 1,
-							'title_li'   => '',
-							'number'     => 10,
-						)
-					);
-					?>
-				</ul>
-			</div><!-- .widget -->
+				<!-- @TODO- All widgets should end dup like these. -->
+				<? the_widget('WP_Widget_Recent_Posts'); ?>
+				<?php the_widget('WP_Widget_Tag_Cloud'); ?>
+			</div>
 
-			<?php
-			/* translators: %1$s: smiley */
-			$asite_archive_content = '<p>' . sprintf(esc_html__('Try looking in the monthly archives. %1$s', 'asite'), convert_smilies(':)')) . '</p>';
-			the_widget('WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$asite_archive_content");
-
-			the_widget('WP_Widget_Tag_Cloud');
-			?>
-
-		</div><!-- .wrong-way__container -->
+		</div><!-- .lost__container -->
 	</section><!-- .error-404 -->
 
 </main><!-- #main -->

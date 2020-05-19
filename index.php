@@ -36,6 +36,7 @@ get_header();
 				<?php the_posts_navigation(); ?>
 			</section>
 
+			<!-- @TODO- Make "IF HAS > Sidebar -->
 			<section class="content--secondary">
 				<?php get_sidebar(); ?>
 			</section>

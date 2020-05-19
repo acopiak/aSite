@@ -816,7 +816,7 @@ a:active {
 	display: none;
 }
 
-.wrong-way__container,
+.lost__container,
 .entry__content,
 .entry__summary {
 	margin: 1.5em 0 0;
@@ -856,7 +856,7 @@ a:active {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-.wrong-way__container .wp-smiley,
+.lost__container .wp-smiley,
 .entry__content .wp-smiley,
 .comment-content .wp-smiley {
 	border: none;

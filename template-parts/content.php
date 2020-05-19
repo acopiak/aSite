@@ -13,20 +13,20 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry__header">
 		<?php if (is_singular()) : ?>
-			<h1 class="entry-title">
+			<h1 class="entry__title">
 				<?php the_title(); ?>
 			</h1>
 		<?php else : ?>
-			<h1 class="entry-title">
+			<h1 class="entry__title">
 				<a href="<?php esc_url(get_permalink()) ?>" rel="bookmark"></a>
 			</h1>
 		<?php endif; ?>
 
 		<?php if ('post' === get_post_type()) : ?>
-			<div class="entry-meta">
+			<div class="entry__meta">
 				<?php asite_posted_on(); ?>
 				<?php asite_posted_by(); ?>
-			</div><!-- .entry-meta -->
+			</div><!-- .entry__meta -->
 		<?php endif; ?>
 	</header><!-- .entry__header -->
 

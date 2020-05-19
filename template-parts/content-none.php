@@ -17,7 +17,7 @@
 		</h1>
 	</header><!-- .page__header -->
 
-	<div class="page__content">
+	<div class="wrong-way__container">
 		<?php if (is_home() && current_user_can('publish_posts')) : ?>
 			<?php printf(
 				'<p>' . wp_kses(
@@ -42,5 +42,5 @@
 			</p>
 			<?php get_search_form(); ?>
 		<?php endif; ?>
-	</div><!-- .page__content -->
+	</div><!-- .wrong-way__container -->
 </section><!-- .content--none -->

@@ -18,7 +18,7 @@ get_header();
 			<h1 class="page__title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'asite'); ?></h1>
 		</header><!-- .page__header -->
 
-		<div class="page__content">
+		<div class="wrong-way__container">
 			<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'asite'); ?></p>
 
 			<?php
@@ -52,7 +52,7 @@ get_header();
 			the_widget('WP_Widget_Tag_Cloud');
 			?>
 
-		</div><!-- .page__content -->
+		</div><!-- .wrong-way__container -->
 	</section><!-- .error-404 -->
 
 </main><!-- #main -->

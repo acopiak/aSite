@@ -17,7 +17,7 @@
 		</h1>
 	</header><!-- .page__header -->
 
-	<div class="lost__container">
+	<div class="error__container">
 		<?php if (is_home() && current_user_can('publish_posts')) : ?>
 			<?php printf(
 				'<p>' . wp_kses(
@@ -42,5 +42,5 @@
 			</p>
 			<?php get_search_form(); ?>
 		<?php endif; ?>
-	</div><!-- .lost__container -->
+	</div><!-- .error__container -->
 </section><!-- .content--none -->

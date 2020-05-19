@@ -13,21 +13,21 @@ get_header();
 
 <main id="primary" class="site__content">
 
-	<section class="error-404__container not-found">
+	<section class="error__container not-found">
 		<header class="page__header">
 			<h1 class="page__title">
 				<?php esc_html_e('Oops! That page can&rsquo;t be found.', 'asite'); ?>
 			</h1>
 		</header><!-- .page__header -->
 
-		<div class="lost__container">
-			<div class="lost--primary">
+		<div class="error__content">
+			<div class="error--primary">
 				<p>
 					<?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'asite'); ?>
 				</p>
-			</div>
+			</div><!-- .error__container -->
 
-			<div class="lost--secondary">
+			<div class="error--secondary">
 				<!-- @TODO- Make a 'searchform.php'. -->
 				<div class="widget widget--search">
 					<?php get_search_form(); ?>
@@ -56,10 +56,11 @@ get_header();
 				<!-- @TODO- All widgets should end dup like these. -->
 				<? the_widget('WP_Widget_Recent_Posts'); ?>
 				<?php the_widget('WP_Widget_Tag_Cloud'); ?>
-			</div>
+			</div><!-- .error__container -->
+		</div><!-- .error__content -->
 
-		</div><!-- .lost__container -->
-	</section><!-- .error-404 -->
+
+	</section><!-- .error__container -->
 
 </main><!-- #main -->
 

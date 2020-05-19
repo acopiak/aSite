@@ -21,7 +21,7 @@ get_header();
 		<?php if (have_posts()) : ?>
 			<section class="content--primary">
 				<?php if (is_home() && !is_front_page()) : ?>
-					<header>
+					<header class="page__header">
 						<h1 class="page__title screen-reader-text">
 							<?php single_post_title(); ?>
 						</h1>

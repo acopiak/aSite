@@ -73,7 +73,7 @@ if (!function_exists('asite_setup')) :
 			array(
 				'search-form',
 				'comment-form',
-				'comment-list',
+				'comments__list',
 				'gallery',
 				'caption',
 				'style',

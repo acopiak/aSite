@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying comments
  *
@@ -10,68 +11,62 @@
  * @package aSite
  */
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
+if (post_password_required()) {
 	return;
-}
-?>
+} ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments__container">
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$asite_comment_count = get_comments_number();
-			if ( '1' === $asite_comment_count ) {
-				printf(
+	<?php if (have_comments()) : ?>
+		<h2 class="comments__title">
+			<?php $asite_comment_count = get_comments_number(); ?>
+			<?php if ('1' === $asite_comment_count) : ?>
+			<?php printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'asite' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					esc_html__('One thought on &ldquo;%1$s&rdquo;', 'asite'),
+					'<span>' . wp_kses_post(get_the_title()) . '</span>'
 				);
-			} else {
-				printf( 
+			else :
+				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $asite_comment_count, 'comments title', 'asite' ) ),
-					number_format_i18n( $asite_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $asite_comment_count, 'comments title', 'asite')),
+					number_format_i18n($asite_comment_count),
+					'<span>' . wp_kses_post(get_the_title()) . '</span>'
 				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+			endif ?>
+		</h2><!-- .comments__title -->
 
-		<?php the_comments_navigation(); ?>
+		<!-- @TODO Why two by default (_s)? Left and right? 1/2-->
+		<div class="comments__navigation">
+			<?php the_comments_navigation(); ?>
+		</div><!-- .comments__navigation -->
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
+		<ol class="comments__list">
+			<?php wp_list_comments(
 				array(
 					'style'      => 'ol',
 					'short_ping' => true,
 				)
-			);
-			?>
-		</ol><!-- .comment-list -->
+			); ?>
+		</ol><!-- .comments__list -->
 
-		<?php
-		the_comments_navigation();
+		<!-- @TODO Why two by default (_s)? Left and right? 2/2-->
+		<div class="comments__navigation">
+			<?php the_comments_navigation(); ?>
+		</div><!-- .comments__navigation -->
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'asite' ); ?></p>
-			<?php
-		endif;
+		<!-- @TODO- If you delete the comment '//', second parentheses on exc_html goes red, error? Tried copy. -->
+		<?php if (!comments_open()) : ?>
+			<!-- If comments are closed and there are comments, let's leave a little note, shall we? -->
+			<p class="no-comments">
+				<?php esc_html_e('Comments are closed.', 'asite'); ?>
+			</p><!-- .no-comments -->
+		<?php endif; ?>
+	<?php endif; ?>
 
-	endif; // Check for have_comments().
-
-	comment_form();
-	?>
+	<!-- @TODO Make "IF has comments" -->
+	<div class="comments__new">
+		<?php comment_form(); ?>
+	</div><!-- .comments__new -->
 
 </div><!-- #comments -->
